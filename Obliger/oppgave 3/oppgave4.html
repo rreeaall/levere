@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+  font-family: sans-serif;
+}
+
+.green {
+  color: green;
+}
+  </style>
+  
+    <main id="main">
+        <p id="desc">Sorter etter minste først</p>
+        <ul id="guess"></ul>
+        <ul id="numbers"></ul>
+        <button type="button">Ok</button>
+      </main>
+
+    <script>
+        // Her henter jeg ut HTML elementer
+const numbersUl = document.getElementById('numbers');
+const guessUl = document.getElementById('guess');
+// Her henter jeg knappen
+const button = document.querySelector('button');
+// Dette er en liste med tall som er statisk
+const numbers = [7, 48, 53, 86, 13, 71, 82];
+
+const getGuess = () => {
+  
+  const answers = guessUl.querySelectorAll('input');
+  return Array.from(answers).map((answer) => answer.value);
+};
+
+const checkNumberSeq = () => {
+  // Her henter jeg ut svarene
+  const guess = getGuess();
+  // Bruker listen med tall og sorterer denne 
+  let isCorrect = numbers.sort().join('') === guess.join('');
+  if (isCorrect) {
+    alert('Dette var riktig');
+  }
+};
+
+const addInputUI = () => {
+  // Går over tallene i listen slik at jeg kan lage nok <li> med <input /> som antall tall
+  for (let number of numbers) {
+    const li = `<li><input type="text" /></li>`;
+
+    guessUl.innerHTML += li;
+  }
+};
+
+const addNumbersUI = () => {
+  // Går over  tallene for å lage <li> med tallene som skal sortere
+  for (let number of numbers) {
+    const li = `<li>${number}</li>`;
+
+    numbersUl.innerHTML += li;
+  }
+};
+
+const createUI = () => {
+  addNumbersUI();
+  addInputUI();
+};
+
+// skrive ut tallene som skal gjettes
+createUI();
+
+// Klikk sjekker funksjonen som sjekker om det er riktig sortering
+button.addEventListener('click', checkNumberSeq);
+    
+    </script>
+
+
+    <script>
+    //avansert løsning
+    **
+ *
+ * En mer avansert løsning som genererer listen med tall,
+ * lager en ny unik liste med tall om du har sortert riktig,
+ * setter tilfeldig retning (desc, asc) du må sortere
+ *
+ */
+
+const numbersUl = document.getElementById("numbers");
+const guessUl = document.getElementById("guess");
+const descEl = document.getElementById("desc");
+const button = document.querySelector("button");
+let direction;
+let numbers = [];
+const directions = ["asc", "desc"];
+
+const generateRandomNumber = (limit, startValue) => {
+  if (startValue >= limit)
+    throw new Error("Limit must be higher than startvalue");
+  return Math.floor(Math.random() * limit + startValue);
+};
+
+const generateNumber = (listLength) => {
+  for (let i = 0; i < listLength; i++) {
+    numbers.push(generateRandomNumber(90, 10));
+  }
+};
+
+const setSortDirection = () => {
+  return directions[generateRandomNumber(2, 0)];
+};
+
+const getGuess = () => {
+  const answers = guessUl.querySelectorAll("input");
+  return Array.from(answers).map((answer) => answer.value);
+};
+
+const checkNumberSeq = () => {
+  const guess = getGuess();
+  let isCorrect = false;
+  if (direction === "asc") {
+    isCorrect = numbers.sort().join("") === guess.join("");
+  } else {
+    isCorrect = numbers.sort().reverse().join("") === guess.join("");
+  }
+  if (isCorrect) {
+    resetUI();
+    createUI(generateRandomNumber(5, 3));
+  }
+};
+
+const addSortDirectionText = (direction) => {
+  descEl.innerHTML = `Sorter etter ${
+    direction === "asc" ? "minste først" : "største først"
+  }`;
+};
+
+const addInputUI = () => {
+  numbers.forEach(() => {
+    const li = `<li><input type="text" /></li>`;
+    guessUl.innerHTML += li;
+  });
+};
+
+const addNumbersUI = () => {
+  for (let number of numbers) {
+    const li = `<li>${number}</li>`;
+    numbersUl.innerHTML += li;
+  }
+};
+
+const resetUI = () => {
+  numbers = [];
+  numbersUl.innerHTML = null;
+  guessUl.innerHTML = null;
+};
+
+const createUI = (number) => {
+  direction = setSortDirection();
+  generateNumber(number, 1);
+  addSortDirectionText(direction);
+  addNumbersUI();
+  addInputUI();
+};
+
+createUI(2);
+
+button.addEventListener("click", checkNumberSeq);
+    </script>
+</body>
+</html>

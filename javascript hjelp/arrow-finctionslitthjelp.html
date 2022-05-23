@@ -1,0 +1,20 @@
+const myArray = (x) => x * x;
+console.log(myArray(2));
+
+// Lettere måte
+
+const myArray = x => x * x
+
+console.log(myArray(2));
+
+//Ny 
+
+const multiOperations = x => {const y = x * x; return y};
+
+console.log(multiOperation(2)); //Får samme verdi (4) som de over.
+//Her i denne så setter vi en ny verdi (const y = x * x;) Da må vi også returnere. I det tilfelle her så blir vi nødt til å ha en block scope på det.
+
+
+const arrowRest = (a, b, ...rest) => [a, b, rest]; //Første verdien (a) blir 2, andre verdien (b) blir 3 og rest som blir en egen array med 4, 5, 6 og 7
+//En rest operator tar i dette tilfelle
+console.log(arrowRest(2, 3, 4, 5, 6, 7)); //Vi fpr ut en array siden jeg spesifiserte at det er en array jeg skal få ut. 

@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hjelp</title>
+</head>
+<body>
+
+
+
+
+<script>
+// Windows: 
+Kommentere ut linje → CTRL + K+ C
+Fjerne kommentar → CTRL + K + U
+
+// Mac
+Kommentere ut linje → ⌘ + K + C
+Fjerne kommentar → ⌘ + K + U
+
+//Variabler og Datatyper:
+
+//Navngivning av variabler:
+
+//Det er et par regler for navngivning av variabler.
+//   1. Variabelnavn kan kun inneholde bokstaver, tall eller $ og _
+//   2. Første karakter kan ikke være et tall
+
+// IKKE OK
+let 67birthday;  //kan ikke starte med tall, da får man feil
+let not-ok;     //kan ikke ha binnestrek. Så man harnikke lov med bindestrek, eller tall foran.
+
+// OK
+let birthday67;
+let totally_fine;  //Men man kan bruke understrek
+
+//Nummer:
+let intNumber = 3;   //Vanlig hel-tall skrives med 'int'
+let floatNumber = 11.24;  //Desimaltall skrives med 'float'
+
+
+//String
+//String omsluttes med enten apostrof ('), anførselstegn (") eller gravis (`). Jeg kaller det gjerne enkel-, dobbel- og bakoverfnutter.
+let singleQuote = 'en string med enkelfnutter';  
+let doubleQuote = 'en string med dobbelfnutter';
+let backTick = `en string med bakoverfnutter`;
+
+
+//Å bruke enkelfnutt eller dobbeltfnutt er en smakssak. Bakoverfnutter har derimot en nytteverdi, vi kan putte variabler inn i stringer. Det kalles template strings.
+let navn = 'Eline';
+
+// Disse to skriver ut det samme
+let singleQuote = 'Hei ' + navn + ', ha en fin dag!';
+let backTick = `Hei ${navn}, ha en fin dag!`;
+
+// Feil fnutter, vil ikke skrive ut navnet
+let wrongQuote = 'Hei ${navn}, ha en fin dag!';//Denne er feil fordi det er brukt vanlig enkelt snutt
+
+//String over flere linjer::
+//Med bakoverfnutter (tempelate literals) kan man enkelt skrive en string over flere linjer.
+// Funker fint
+let longString = `Handlelista for helgen: Pepsi Max,
+Potetgull,
+Taco,
+Grændis
+`;
+
+let hello = `Hello
+you`;
+
+// Funker ikke fordi den er brukt feil snutt på.
+let longWrongString = 'Handlelista for mandag: Bananer,
+Appelsinjuice,
+Knekkebrød
+';
+
+//Boolean:
+//Har to verdier, true og false. Man kan sette en variabel til true og false, eller returnere en verdi som er true eller false.
+
+let lightOn = false;
+
+// Returnerer true
+let isLessThan = 2 < 5;
+
+//0, "", null, undefined og NaN vil returnere false.
+
+//Typeof:
+//Typeof returnerer datatypen for verdien. Det er to måter å skrive det på.
+
+typeof 1; // Returnerer number
+
+let ord = 'bokhylle';
+typeof ord; // Returnerer string
+
+//Ny Operators og conditionals:
+
+
+// Operatorer:
+
+Operators, eller dårlig oversatt til operatorer, er symboler som utfører noe.
+
+// Matte:
+// Pluss (+) er litt annerledes da den slår sammen tall og stringer også.
+
+1 + 2 = 3;
+'4' + 9 = '49'; // Dette gjelder kun for +. så + brukes ikke bare for matte, men sette sammen også.
+
+
+2 ** 3 = 8; // 2^3, 2 opphøyd i . Altså 2*2*2
+
+// Minske/øke
+
+let number = 3; // Her har jeg satt at number er 3.
+
+n += 3; // number er nå 6 (number = number + 3)   // Så her blir det nummer = numer + 3. Denne blir dermed 3+3
+n *= 2; // number er nå 12 (number = number * 6)   //Mens på denne er det Nummer = Nummer * 2. Siden tallet her blir 6, så blir det 6*2
+
+++number; // 13 Øker før verdien brukes. Henne: Her kan vi øke med 1 (eller minske ved å bruke ++ eller --). Her øker vi tallet før vi skriver ut.
+--number; // 12 Minsker før verdien brukes //Henne: Her minsker vi tallet før vi skriver ut.
+
+number++; // 12 Bruker verdien før den økes //Henne: Her burker vi tallet, også øker det
+number--; // 12 Bruker verdien før den minskes //Henne: Her bruker vi tallet og minsker det. 
+
+// Sammenligning:
+// Returnerer true eller false. Kan brukes på alle datatyper. Legg merke til forskjellen mellom 2 og 3 erlikhetstegn (=).
+
+5 < 4; // False, 5 er ikke mindre enn 4
+3 > 2; // True, 3 er større enn 2
+
+9 <= 3; // False, 9 er ikke mindre eller lik 3
+6 >= 6; // True, 6 er større eller lik 6
+
+8 == 7; // False, 8 er ikke lik 7   //Henne bra: 1 = tegn for å sette verdi. 2 == tegn for å sjekke om de er like, her er jo ikke 8 og 7 lik. kan ha 3 === tegn
+8 != 7; // True, 8 er ikke lik 7
+
+// === sjekker om datatypen er lik
+'1' == 1; // True                  //henne: Disse to er like siden begge er 1, men den ene er string og andre er tall. 
+'1' === 1; // False, ikke samme datatype   //Henne: for å se om de er faktisk helt like, så bruker man 3 === tegn. Da sjekker den både om de er like, men også samme datatype.
+
+'1' != 1; // Motsatt her enn oppe. False, begge er 1
+'1' !== 1; // True, ikke samme datatype (foordi de er ikke like)
+
+// 0, false, " " og null er alle false
+0 == false; // True, fordi de er like.
+0 === false; // False, er ikke samme datatype //Men hvis vi tar 3 === tegn så er det false fordi det ikke er samme datatype.
+
+// Logiske:
+// || (ELLER), && (OG), ! (IKKE) brukes for å sjekke om noe er true eller false, eventuelt returnere true eller false.
+
+// Henne: Her har vi en if-test med logiske operaters. Disse to || betyr 'eller'. Disse to && betyr 'og'
+let klokke = 18;
+
+// Hvis klokke er mindre enn 18 ELLER over 18, så er det sant
+if (klokke < 18 || klokke > 18) {
+  console.log('Middag!');
+}
+
+let dag = 'mandag';
+
+// Hvis klokke er lik 18 OG dag er lik mandag, så er det sant
+if (klokke == 18 && dag === 'mandag') {
+  console.log('Pasta bolognese serveres nå!');
+}
+
+let tirsdag = true;
+console.log(!tirsdag); // false, returnerer motsatt
+
+// Conditionals:
+// Conditionals brukes til å sjekke om noe er sant/true.
+
+// If, else if, else: Sjekker om første tilstand er sann, hvis ikke går vi videre. Den som er sann er den som returneres.
+// Henne: På Conditionals tenker vi ofte på if-tester, men vi har andre versjoner også. vi ser på if, turnary operator, og switch;
+
+let pizza = 'Grandiosa'; //Variabel pizza er lik grandiosa
+
+if (pizza === 'BigOne') {  //Hvis pizza er like bigone, så skrives ut nam:
+  console.log('Nam!');
+} else if (pizza === 'Grandiosa') {    //Ellers/Hvis det ikke er sant så srives ut 'jaja, blir pasta'
+  console.log('Mmm');  
+} else {
+  console.log('Jaja, blir pasta da');
+}
+
+// Conditional operator (ternery):
+// Hvis man har en enkel if - else er det mulig å skrive den kortere med conditional operator, noen ganger kalt ternary operator.
+// Anbefales ikke hvis det flere else if da koden kan bli ganske uleselig.
+
+let result = betingelse ? verdi hvis sann : verdi ellers;                               
+let pizza = 'Grandiosa'; 
+
+//Henne: Denne er splitter ny, heter ternery operator. Det er en conditional som fungerer slik:
+//Under har vi en variabel, den sier '= pizza'. Så hvis Pizza er like Bigone (Hvis dette er true), så skal dette skje (Nam!) eller så skal dette skje (Nei takk).
+//Så den lille linjen under er det samme som den if og else testen om pizza som er skrevet rett over.
+//Altså, vi setter en variabel, sier er lik (=), også hva vi skal sjekke (pizza === 'BigOne'), så et ? tegn, så hva som skjer hvis det er sant (Nam!), så kolon (:) og hva som skjer ellers
+
+let pizzaValg = (pizza === 'BigOne') ? 'Nam!' : 'Nei takk';
+console.log(pizzaValg)     // Skriver ut Nei takk fordi pizza er like 'Grandiosa'
+
+
+// Switch:
+// Det samme som mange ifs. Sjekker om hver case stemmer med parameteret. Hvis ikke kjøres default:
+
+let pizza = 'Dr. Oetker';  //Henne: Så har vi switch. Hvis vi hadde hatt en lang if test med masse if/else nedover lenge, så er det alltid bedre å bruke switch.
+
+switch (pizza) {     //Henne: Da skriver vi sqtich, så en parameter som nå er pizza, det er det den skal sjekke. Så er det casen vi skal sjekke (som nå er case grandiosa) -
+                     //Henne: Etter det er det kolon (:) altså hva som skal skje, også 'Break;' Break gjør at hvis det stemmer, så stopper det der.
+                     //Henne: Hvis ingen stemmer, så kommer den til slutt hvor det står 'default:'. default er det samme som 'else', det er der vi ender
+  case 'Grandiosa':
+    console.log('Kjærlighet ved første bit');
+    break;
+  case 'BigOne':
+    console.log('More of the good stuff');
+    break;
+  case 'Dr. Oetker':
+    console.log('Quality is the Best Recipe');
+    break;
+  default:
+    console.log('Hjemmelagd pizza er best');
+}
+
+
+
+
+
+// Ny!!!!!!!!!! Arrays, objekt og løkker:
+
+//Arays:
+// Arrays er lister med data som kan inneholde alle datatyper.
+//Henne: Array er en liste rett og slett. Under har vi en liste med en string, en boleon og ett tall. Hvis du skriver ut den med console.log, så skriver den ut arrayen.
+let datatypeArray = [true, 'string', 23];
+
+// Hente ut første element i arrayen
+console.log(datatypeArray[0]); 
+// Antall elementer i arrayen
+console.log(datatypeArray.length);
+
+// Array metoder: //Henne: så har vi noen metoder vi kan bruke på array som f.eks. '.pop'. Den fjerner siste element, så returnerer det.
+// .push() og .pop():
+// .push() og .pop() kan brukes for å legge til eller fjerne elementer.
+datatypeArray.push('legger til denne stringen');     //Henne: vi har også noe som heter push som legger til
+
+datatypeArray.pop(); // Fjerner siste element og returnerer fjernet element
+
+// .forEach():
+// For hvert element i arrayen, gjør dette. Dette endrer ikke den orginale arrayen.
+
+const liste = [56, 43, 72, 61];  
+
+liste.forEach((element) => {
+  console.log(2 * element);
+});
+
+// .filter():
+//Lager en ny array med alle elementer som oppfyller kravet du har satt.
+const liste = [56, 26, 43, 72, 61, 3, 19];  //henne: her har vi noen tall som vi øsnker å gjøre noe med. Den første metoden er filter. Det den gjør er å filtrere utifra et krav jeg satt.
+// henne: Det jeg gjør nå er å si at variabelen filtrert array er lik liste.filter. for hvert element så skal den sjekke om elementet er mindre enn 45
+// Ny array med alle elementer mindre enn 45
+const filtrertArray = liste.filter((element) => {
+  return element < 45;
+});
+
+// .map():
+// For hvert element i arrayen skal noe gjøres og legges til i en ny array. Endrer ikke den originale arrayen.
+const liste = [56, 43, 72, 61];
+const nyListe = liste.map((element) => {
+  2 * element;
+});
+// Ganger hvert element med 2
+
+//I videoen: disse to, forEach og map ser helt lik ut. det er en stor forskjell på de. på forEach, tar jeg lista og sier at for hvert element gjør noe. -
+// I videoen: så her skal den gange hvert element med to. Men så er det sånn at forEach endrer arrayen for hvert element, den lager ikke ny liste du kan skrive ut. 
+// I videoen: Så for å få ut dette må vi Console logge i midten, slik: Liste.forEach(element => console.log( 2 * element)); Da for hvert element gjør den det
+// I videoen: Mens .Map gjør endringen for hvert element også lager den en ny liste. consol logge: consol.log(Liste.map(element => 2 * element));
+//I videoen: Så her concol logger jeg ut liste.map for hvert element ganger 2. Da får vi ut en ny liste. Det er forskjllen, de ser lik ut, men
+//I videoen: forskjellen er at forEach gjør noe for hvert steg, mens Map gjør å noe for hvert steg, men så lager den en ny liste 
+Liste.forEach(element => 2 * element);
+
+Liste.map(element => 2 * element);
+
+// Objekt: //Da gikk jeg gjennom arrays, nå går jeg gjennom objekter: 
+//Henne: Når vi bruker array, har vi sånn typ liste: Const person1 = ['Eline', 26, 'Barcelona', true]; Mens når vi har objekter, 
+//Henne: så kan vi ha båre en nøkkel/propert og en verdi. Det letteste å se for seg da er hvis du skulle registrere masse infromasjon om 1 person -
+//Henne:  og skal putte det i 1 array, så blir det vanskelig å skjønne hva som er hva som er hva. som den true'n på eksempelet over, hva er den liksom?
+//Henne: det er vanskelig å vite i en array. Array er lagd forlister med tall, handlelister, altså kort informasjon so gir mening uten ekstra informasjon.
+//Henne: mens på objevt kan vi sette nøkkel, for her har vi navn og verdi. alder verdi, bosted verdi, student verdi har vi som vist under. 
+
+
+// Objekt er en liste med nøkkel og verdi omringet av krøllparantes { }. Dette er ikke JSON.
+const objekt = {
+  nøkkel: verdi,
+  nøkkel1: verdi1,
+};
+
+const person = {
+  navn: 'Eline',
+  alder: 26,
+  bosted: 'Barcelona',
+  student: true,
+};
+
+console.log(person);
+console.log(person.alder); //For bare alder
+
+// Det er mulig å putte arrays inn i objekter. Dette kalles et "nested object".
+
+const objekt = {       //Henne: navn og alder her, er helt vandlig som som på det første eksmepelet over. men i dette eksempelet
+  navn: 'Eline',    //Henne: så har vi bosted, så en ny liste inni den. Her har vi 2 adresser. dette er fint til adresser eller favorit filmer. 
+  alder: 26,        //Henne: Altså noe som skal sjekkes opp mange ganger. Da har man gjerne en liste i en liste. 
+  bosted: [
+    {
+      id: 1,
+      adresse: 'Liksomgata 23',
+      postnummer: '1234',
+      sted: 'Norge',
+    },
+    {
+      id: 2,
+      adresse: 'C/ Señores Curas 68',
+      postnummer: '12120',
+      sted: 'Castellón',
+    },
+  ],
+};
+
+console.log(objekt); // Hele objektet
+console.log(objekt.bosted); // Bosted-listen
+console.log(objekt.bosted[1].adresse); // Adressen på index 1 som blir bosted nummer 2
+
+//Helt ny:
+
+
+// Løkker:
+
+// For:
+// Løkke med instruksjoner - hvor løkken starter, når løkken skal stoppe, oppdatering for hver runde.
+// Ved løkke inni løkke, nested loop, vil den indre kjøre alle runder for hver runde på den ytre.
+
+//Henne: for løkker er noe man har vært mest borti. Under har vi en klasisk for løkke. Her har vi satt at 'i' er lik 0, så lenge 'i' er mindre eller lik 6, så skal 'i' øke med 1.
+//Henne: 
+
+for (let i = 0; i <= 6; i++) {
+  console.log(i);    //Henne: så kan vi consol logge 'i'. Da får jeg ut 0-6. Så først er 'i' lik 0. så går en runde, skriver ut. Så blir 'i' 1, går en runde, skriver ut
+}                 //Henne: Og sånn gjør den helt til 'i' er mindre eller lik 6. Hvis jeg fjerner = tegn, og setter bare mindre enn 6 (< 6), så stopper den når den er 6.
+
+// Nested loop, løkke inni løkke
+//Henne: så har vi for løkke inni for løkke. Det denne gjør er: for, ytre er lik 0, ytre er mindre enn 5, så øke ytre med 1.
+//Henne: her har vi da en for løkke som her, ytre er lik 0, så lenge den er mindre enn 5, skal den øke med 1. Inni den har vi en ny løkke.
+for (let ytre = 0; ytre < 5; ytre++) {
+  for (let indre = 0; indre < 6; indre++) { //Henne: den indre løkka, indre er lik 0. så lenge indre er mindre enn 6 så skal indre øke med 1. Så det den gjør da, er at 
+    console.log(`${ytre}, så ${indre}`); //Henne: den går gjennom den indre løkka for hvert steg i den førsta løkka. Så ytre er 0 på den ytre løkka, 
+                                          //Henne: så skal den gå gjennom den indre løkka til ytre er 6
+  }                                       //Henne: etter å ha consol logga, så i første runder er begge 0, neste runde er den indre 1 og ytre er fortsatt på 0
+}                                         //Henne: fordi den skal gå helt til den indre er 6. Så igjen, indre øker til 2, ytre er forstatt 0, øker til 3, 4, 5, så 6. 
+               //Henne: npr den øker til 6, er vi tilbake her (På den ytre løkka). Nå har den gjort alt den skal inni løkka si, så nå øker ytre løkke med 1. Så den ytre øker til 1, så går den gjennom alle de i den indre løkka en gang til. Så 1 forstatt på den ytre, og 0-6 på den indre. forstetter sånn til ytre øker til 5, så er den ferdig. 
+// While:
+// Så lenge det er true, gjør dette. Eksempelet er false når i er større enn 6, og løkken stopper.
+
+//Henne: så har vi enn annen type løkke kalt while løkke. som vist under, så lenge i er mindre enn 6, da consol logger den i så lenge den er mindre enn 6, altså fra 0-5.
+//Henne: så har vi 
+let i = 0;
+
+while (i < 6) {
+  console.log(i);
+  ++i;
+}
+
+// Gå gjennom array med for-løkke
+// Man kan bruke for-løkke til å gå gjennom en array. Her brukes jeg .length() som gir antall elementer i arrayen. Så lenge i er mindre enn lengden (antall elementer), så...
+
+// Henne: så har vi en handleliste array med frukter. Som vist under, så er i lik 0, så lenge i er mindre enn lengden til handlelisten, så skal i øke med 1.
+//Henne: ok, hvoordan bruker jeg i-en til å skrive ut fruktene, da consol logger vi handlelista og bruker i tilplasseringen.
+//Henne: sp den starter på 0, går en runde å øker til 1, også en runde til, så øker den til 2. Dette er en måte å skrive ut eventer i en array. 
+const handleliste = ['bananer', 'yoghurt', 'nugatti'];
+
+for (let i = 0; i < handleliste.length; i++) {
+  console.log(handleliste[i]);
+}
+
+
+
+//Functions and scope:                   Ny!!!!!!!!!!!!!!!!!!!!!!!
+
+// Funksjoner:
+// Funksjoner er en kodeblokk som utfører en oppgave og kan returnere en verdi. For at en funksjon skal kjøre, må du kalle på den et sted i koden.
+function hello() {
+  console.log('Hello');
+}
+hello();
+
+// Parametere:
+// Man må ofte sende inn informasjon til funksjonen. Det gjøres med parametere.
+function function(parameter, parameter2) {
+    // Bruke parametere her
+};
+
+//Henne: Så har vi funksjoner, her er vi vandt til å se på denne måten. altså funksjon, så navnet på funksjon, så parametre, også hva som skal skje inni funksjonen
+//Henne: Det denne funksjonen gjør er at den skal plusse tall 1 og tall 2, så funksjonen addition med parameterne 1 og 2 skal returnere nummer 1 med nummer 2
+//Henne: 
+function addition(number1, number2) {
+    return number1 + number2;
+}
+
+addition(45, 32); // 77 //Henne: her kjører vi funksjonen, så vi sier addition, også sender vi inn parameterne, så nummer 1 (45) og nummer 2 (32) sendes opp ved number 1, number 2
+//Henne: så number1 blir 45 og number2 blir 32. så returnerer vi 45  + 32, altså 77.
+
+// Arrow function:
+// Med moderne JavaScript har det kommet en ny måte å skrive funksjoner på.
+// Med samme eksempel som over:
+
+//Henne: vi har en ny måte å skrive funksjoner på som kalles arrow functions. så den sum vist under er like den functionen over. På den under
+//Henne: så setter vi en variabel const, navnet på functionen, er like parameterne, så = og pil, så hva som skal skje. denne under er kortere en versjonen over.
+// Henne: vi trenger ikke skrive 'return' under. dette (=> number1 + number2;) blir bare returnert.
+
+const addition = (number1, number2) => number1 + number2;
+
+addition(45, 32);
+
+// Hvis det kun er ett parameter som skal inn, trenger man ikke parantesene.
+
+const addition = number => number + 2;
+
+// Gamle måten
+function addition(number) {
+  return number + 2;
+}
+
+//Henne: hvis det ikke er parrameter i det hele tatt, skriver man med parantes: const addition = () => number + 2;
+
+// Hvis det er mer enn en linje kode i funksjonen, bruker man krøllparantes rundt:
+//Henne: hvis funksjonen har flere linjer inni seg, så bruker vi {}.
+const aFunction = () => {
+    let minus = 3-2;
+    concole.log(minus);
+}
+
+// Henne: for å kjøre denne funksjonen, må jeg kalle på den:
+aFunction();  
+//Henne: nå har jeg kal
+// Både den eldre og den nye versjonen av function fungerer, men anbefaler at du holder deg til én - helst arrow.
+
+
+// Scope:
+
+// Scope refererer til hvor verdier og funksjoner kan nås.
+
+// Global scope:
+// Funksjonen eller verdien kan brukes hvor som helst.
+
+const isStudent = true; //Henne: denne variiabelen kan brukes på alt siden den er utenfor en funksjon
+
+const studentCheck = () => {
+  // isStudent kan brukes her
+};
+
+// isStudent kan brukes her
+studentCheck();
+
+// Block scope:
+// Kan kun brukes innenfor funksjonen den er satt i. //Henen: blockscope er når variabelen er inni en funksjon. ikke bruke consol.log andre steder enn inni funksjonen.
+//Henne: Hvis variabelen kun skal brukes itl funksjonen, så kan man ha den inni. men hvis man ønsker den flere steder, så må den være utenfor
+
+const studentCheck = () => {
+  const isStudent = true;
+
+  // isStudent kan brukes her
+};
+// isStudent kan ikke brukes her
+
+
+
+
+
+
+
+
+
+
+
+// Ny!!!!!!!!!!!!
+// METODER OG EVENTS:
+Innholdsfortegnelse
+
+    // 1. Metoder i DOM
+    // 2. Metoder brukt til å manipulere string
+    // 3. Metoder brukt på arrays
+    // 4. Metoder brukt på objekter
+    // 5. Styling i JS
+    // 6. Events
+    // 7. Video
+
+// Metoder i DOM:
+// Metoder brukes for å endre, lage eller manipulere elementer i DOM. Det finnes utrolig mange, jeg nevner kun noen få.
+
+// .createElement():
+// Lager et tomt HTML-element.
+const newSection = document.createElement('section');
+
+// .textContent:
+// Brukes til å sette tekst til et element. Kan også hente tekstlig innhold fra et element.
+const newSection = document.createElement('h1');
+
+newSection.textContent = 'En overskrift';
+
+// .getElement ...
+// Det finnes et par forskjellige metoder for å returnere et element, eller flere.
+
+// .getElementById():
+// Henter første element med lik ID.
+
+// HTML
+<h1 id='page-title'>En tittel</h1>;
+
+// JS
+let title = document.getElementById('page-title'); //Henne: henter et element på id'en. her henter vi page-title
+
+// .getElementsByTagName():
+// Henter alle elementer med lik tag
+
+// HTML
+<h1>Overskrift</h1>
+<h1>Enda en overskrift</h1>
+
+// JS
+let headings1 = document.getElementsByTagName('h1'); //Henne: denne henter alle knappeelementene (button). 
+
+// .getElementsByClassName():
+// Henter alle elementer med lik klasse.
+
+// HTML
+<button class='btn-save'>Lagre</button>;
+
+// JS
+let saveBtn = document.getElementsByClassName('btn-save'); //Henne: hvis vi har flere elementer med samme class name's, så blir alle henta
+
+// .querySelector():
+// Henter første HTML-element som matcher tag, id eller klasse. /Henne: queryselector fungerer nesten likt som getElements taggene, men
+//Henne: hvis vi skriver inn document.querySelector, så kan vi entetn skrive inn en html tag (altså ett element), vi kan skrive klassenavnet ved å begynne med punktum
+//henne: eller vi kan hente id'en og skrive # først.Så man henter inn elemente, klasse eller id på bruk av querySelector. 
+
+// HTML tag
+let firstHeading = document.querySelector('h1');
+
+// Klasse, legg merke til punktum
+let menuBtn = document.querySelector('.menu-btn');
+
+// Id, legg merke til hashtag
+let menuBtn = document.querySelector('#menu-btn');
+
+// .querySelectorAll():
+// Henter alle elementer, enten på tag, id eller klasse
+//henne: denne henter alle tilfeller. 
+
+// HTML tag
+let allHeadings = document.querySelectorAll('h1'); //Henne: denne henter alle h1 elementent
+
+// Klasse, legg merke til punktum
+let menuBtns = document.querySelectorAll('.menu-btn'); //Henne: denne henter alle elementene med den klassen
+
+// Id, legg merke til hashtag
+let menuBtns = document.querySelectorAll('#menu-btn'); //Henne: denne henter alle elementene med den id'en.
+
+Flere eksempler på bruk av querySelector og querySelectorAll: //Det under er en link
+https://www.javascripttutorial.net/javascript-dom/javascript-queryselector/
+
+
+// .innerHTML:
+// Brukes til å hente ut eller lage innhold.
+
+<p id="id">Tekst</p>
+
+const id = document.getElementById("id")
+console.log(id.innerHTML) // Tekst
+
+id.innerHTML = "Oppdatert tekst"
+
+console.log(id.innerHTML) // Oppdatert tekst
+
+// .appendChild():
+// Legger et "barn" under en "forelder".
+
+// Henter første section på ID
+let aboutUsSection = document.querySelector('#about-us'); //Henne: her henter jeg about-us. 
+
+// Lager en tittel
+let aboutHeading = document.createElement('h1'); //Henne: createElement er for å lage et element. her lages et h1 element. Her lager jeg elementet, under er teksten til elementet.
+aboutHeading.innerHTML = 'Lagd en heading med Javascript';
+aboutHeading.setAttribute("class", "title-h1");  //Henne: vi kan og sette attributter til elementene med settAtribute. her setter jeg en klasse og title h1. setAttribute setter altså atributter på elementene.
+
+// Putter heading inn i section
+aboutUsSection.appendChild(aboutHeading); //Henne: her sier jeg at foreldre elementet også dot puttet et barn, også det elementet jeg vil putte in.
+
+// .removeChild(): 
+// Det er også mulig å fjerne et "barn" fra en foreldernode.
+
+//Henne: dette med child, vi kan lage det og remove child.  
+
+aboutUsSection.removeChild(aboutHeading);  //henne: Her fjerner vi den. 
+
+
+// Metoder brukt til å manipulere string!:
+// Det finnes .toUpperCase() og .toLowerCase()
+// Endrer stringen til kun store eller små bokstaver. Kan brukes rett på stringen eller på variabelen.
+
+//henne: to måter å skrive det på. under har vi variabelen med stringen også .toUpperCase(). dette er den første måten.
+let big = 'En string mED storE OG små Bokstaver'.toUpperCase();
+// EN STRING MED STORE OG SMÅ BOKSTAVER
+
+let small = 'EN annen String med stORE og SMå bokstaVER'; //henne: dette er den 2 måten. her så setter man variabel, så senere sette .toLowerCase til variabelen og ikke rett på stringen.
+
+console.log(small.toLowerCase());
+// en annen string med store og små bokstaver
+
+// .trim():
+// Fjerner whitespace (mellomrom og tab) fra begge sider av stringen.
+
+let spaces = '       unødvendige mellomrom      '; //henne: Trim er den 3 versjonen. den fjerner unødvendig mellomrom foran og bak, ikke på midten.
+
+console.log(spaces.trim());
+// unødvendige mellomrom
+
+//henne: Den 4 og gsiste metoden er å style:
+let saveBTN = document.querySelector('.btn-save');
+//endrer bakgrunnsfargen til knappen:
+saveBtn.style.backgroundColor = '#abc'; //Henne: alltid viktig å huske: Elementet du har henta (saveBtn), så .style, også .(det du skal endre) 
+
+// Det finnes også .trimStart() og .trimEnd() , der sistnevnte kan være lur for å fjerne mellomrom eller tabs på slutten av input i et skjema, for eksempel.
+
+
+// Metoder brukt på arrays:
+// Det finnes en rekke metoder vi kan bruke på arrays (lister), her er noen av de vanligste.
+
+// .length og hente verdi på index:
+// Brukes til å hente ut verdier fra en array.
+
+const baseArray = [1, 2, 50];
+const firstValue = baseArray[0]; // 1
+const arrLength = baseArray.length; // 3
+const lastValue = baseArray[baseArray.length - 1]; // 50
+
+// .includes og .indexOf:
+// .includes brukes til å undersøke om en array inneholder en bestemt verdi. .indexOf brukes til å finne index (plassen) til en verdi. Hvis den ikke finnes får vi -1.
+
+// I moderne JavaScript vil dere lære mer om '.filter', '.find', '.findIndex', '.some' og '.every' som brukes til å undersøke en array.
+
+const baseArray = [1, 2, 3];
+const includes = baseArray.includes(2); // true
+
+// .pop, .push, .shift, .slice:
+// Disse metodene brukes til å fjerne og legge til elementer i en array. Disse endrer den orginale arrayen.
+
+const baseArray = [1, 2, 3, 4, 5];
+
+// Legger til 50
+// Ny lengde blir 6
+// [1, 2, 3, 4, 5, 50]
+const push = baseArray.push(50); 
+
+// 50 - henter siste element
+// Sitter da igjen med [1, 2, 3, 4, 5]
+const pop = baseArray.pop(); 
+
+// 1 - henter første element
+// Sitter da igjen med [2, 3, 4, 5]
+const shift = baseArray.shift();
+
+// [3, 4] - henter fra og med index 1 til index 3
+// Sitter fortsatt igjen med [2, 3, 4, 5]
+const slice = baseArray.slice(1, 3);
+
+// Array.from():
+// Brukes for å gjøre om til array.
+
+// (Under er på kodinga, ikke det over forresten kedi).
+// Gir oss en nodeList som ligner en array, men ikke helt lik
+// Må gjøre om til array for å kunne bruke
+// alle metoder vi har på array
+const liElements = document.querySelectorAll("li")
+const nodeListToArray = Array.from(liElements); // [Array her]
+
+const arrayFrom = Array.from('word'); // [w,o,r,d]
+
+// Array.isArray():
+// Brukes til å sjekke om noe er en array.
+
+const baseArray = [1, 2, 3, 4, 5];
+const isArray = Array.isArray(baseArray); // true
+
+// Metoder brukt på objekter:
+// Det finnes en rekke metoder vi kan bruke på objekter, her er noen av de vanligste.
+
+// Hente verdier basert på nøkler (key):
+
+const obj = {
+  key: 'value',
+  anotherKey: 1337,
+  nested: {
+    keyOne: true,
+    keyTwo: false,
+  },
+  myFunction() {
+    return "content";
+  },
+};
+
+const myVar = "key"
+const value = obj.key // value
+const valueTwo = obj["key"] // value
+const valueThree = obj[myVar] // value
+const nested = obj.nested.keyOne; // true
+const content = obj.myFunction() // content
+
+// Fjerne og legge til verdier:
+// Vi kan fjerne, endre og legge til verdier i et objekt.
+
+const emptyObj = {}
+emptyObj.myKey = 'myValue';
+emptyObj.myOtherKey = true;
+
+console.log(emptyObj) // {myKey: myValue, myOtherKey: true}
+
+delete emptyObj.myKey
+
+console.log(emptyObj) // {myOtherKey: true}
+
+emptyObj.myOtherKey = 'changeValue';
+
+console.log(emptyObj) // {myOtherKey: "changeValue"}
+
+// JSON.stringify():
+// Kan gjøre et objekt om til string for å skrive det ut / se hva vi har å jobbe med.
+
+const obj = {
+  key: 'value',
+  anotherKey: 1337,
+  nested: {
+    keyOne: true,
+    keyTwo: false,
+  },
+};
+
+const stringify = JSON.stringify(obj); // lager string av objektet
+const parseJson = JSON.parse(stringify); // gjør om til objekt igjen
+
+// Object.values(): 
+// Brukes for å hente ut alle verdiene i et objekt.
+
+const baseObj = {
+  name: 'Marius Wallin',
+  age: 37,
+  male: true,
+};
+
+const objValues = Object.values(baseObj); // [Marius Wallin, 37, true]
+
+// Object.keys():
+// Brukes til å hente ut alle keys.
+
+const baseObj = {
+  name: 'Marius Wallin',
+  age: 37,
+  male: true,
+};
+
+const objKeys = Object.keys(baseObj); // [name, age, male]
+
+// Object.entries():
+// Brukes til å hente nøkler og tilhørende verdier.
+
+const baseObj = {
+  name: 'Marius Wallin',
+  age: 37,
+  male: true,
+};
+
+// [['name', 'Marius Wallin'], ['age', 37], ['male', true]]
+const objKeysValues = Object.entries(baseObj); 
+
+// Events:
+// Events er handlinger som gjøres i nettleseren, som du kan reagere på i koden. For eksempel, noe skal skje når bruker klikker på en knapp.
+//Henne: så h ar vi Events, dette er lytte på endringer på elementer. Flere måter
+
+// Event listener:
+// For å lytte på endringer eller handlinger, må man bruke .addEventListener på et element.
+
+// Hente element
+let btn = document.querySelector('button');
+
+// 'click' er event vi lytter etter
+btn.addEventListener('click', () => {
+  // Det som skal skje når knappen er trykket
+  console.log('Knapp trykket');
+});
+
+// Event handlers: 
+// Det er en annen måte å lytte til events, annet enn .addEventListener(). Man kan sette attributter rett på elementet i HTML, og lage en funksjon i JS -
+// som skal kjøre når noe skjer med elementet i HTML. Disse starter gjerne med on, for eksempel onclick.
+
+let eventHandler = (event) => {
+  event.preventDefault();
+  console.log('Knapp trykket');
+};
+
+// HTML
+<button onclick="eventHandler()">Trykk på meg</button> //Henne: her står det onClick på HTML-en, DVS at når man trykker på knappen så skal det skje noe. onClick lytter på klikk.  Når knappen blir trykket på, så skal den kjøre en funksjon 
+
+// eventuelt kun...
+
+<button onclick="console.log('Knapp trykket')">Trykk på meg</button>
+
+// Ulemper med event handlers: 
+
+//    - JavaScript-kode blir blandet med HTML. Ved større refaktoreringer eller endringer, kan det bli vanskelig å finne event handleren.
+//    - Hvis HTML-elementet er ferdig lastet før Javascript-koden, kan brukere trykke på elementet uten at noe skjer. Det vil føre til error.
+//    - Kan kun knytte en handler til et element
+//    - Kan ikke gjenbruke logikken vi ønsker å bruke når eventet trigges
+
+// .preventDefault():
+// Noen elementer i HTML har handlinger. <form>vil sende inn skjemaet, mens <a>vil sende bruker til linken. -
+// Dette kan unngås med .preventDefault(); Vi trenger å vite mer om elementet, og sender inn event som parameter. Dermed setter vi preventDefault på eventet.
+
+// Hente element
+let btn = document.querySelector('button');
+
+// 'click' er event vi lytter etter
+btn.addEventListener('click', (event) => {  //Henne: AddEventListener gjør det samme som å skrive rett i HTML-en, men den er sterkt anbefalt. Når jeg trykker på knappen her sier jeg button, addeventlistener skal lytte til klikk, også under er hva som skal skje
+  // Det som skal skje når knappen er trykket
+  event.preventDefault(); //henne: denne sier at når eventet skjer, så skal den prevnte default, preventDefault er en metode som stopper skjemaet fra å refreshe siden. 
+  console.log('Knapp trykket');
+});
+
+// /Henne: konklusjon, det er 3 måter å gjøre det på, 1: onClick med funksjon (<button onclick="eventHandler()">Funksjon</button). og 2: onClick med kode rett i HTML-en (<button onClick="console.log('HTMl - kodeknapp trykket')"> Rett i HTML</button>). og 3: med addEventListener, enten med funksjon, eller det som skal skje rett inni addEventListern (som vist på eksempelet over).
+
+// target og currentTarget:
+// 'event.currentTarget' peker på elementet event listener er satt på.
+// 'event.target' peker på elementet som trigget eventet/elementet bruker f.eks. trykket på.
+
+// Mouse events:
+// Det er mulig å lytte på brukers datamusbevegelser. onclick er jo en av disse. Det finnes også:
+
+//     'dblclick' - dobbeltklikk
+//     'mousemove' - fyrer konstant mens datamusen beveger seg så lite som 1px.
+//     'mouseover' - fyrer når datamusen beveger seg inn på elementet, eller barna.
+//     'mouseout' - fyrer når datamusen beveges ut av elementet, eller barna.
+//     'mouseenter' - fyrer når datamusen beveges inn på elementet, men ikke barna.
+//     'mouseleave' - fyr når datamusen beveges ut av elementet, men ikke barna.
+
+// Legg merke til at mouseover/mouseout og mouseenter/mouseleave gjør det samme, men en påvirker også barn av elementet.
+
+// Keyboard events:
+//     'keypress' - ligner på mousemove, fyrer så lenge man trykker på tastaturet, også når man holder en tast inne.
+//     'keydown' - fyrer når tast trykkes ned, og også når tasten holdes nede.
+//     'keyup' - fyrer når tast slippes.
+
+// Alle events: Under er en link:
+https://www.w3schools.com/jsref/dom_obj_event.asp
+
+
+// Styling i JS: 
+// Det er mulig å sette CSS-styling på HTML-elementer i JavaScript. Ofte gjøres dette i kombinasjon med events som du nettopp har lest om.
+
+// Endre en CSS-stil:
+
+// HTML-element
+<button class='btn-save'>Lagre</button>;
+
+// Henter HTML-element
+let saveBtn = document.querySelector('.btn-save');
+
+// Endrer bakgrunnsfargen til sort
+saveBtn.style.backgroundColor = '#000';
+
+// .classList:
+// Vi kan bruke '.classList' til å legge til '.add()'', fjerne '.remove()'' eller skru av og på klasser '.toggle()'.
+
+<p class="one two three" id="id">Tekst</p>
+
+const id = document.getElementById("id")
+
+console.log(id.classList) // ["one", "two", "three"]
+
+id.classList.add("four"); // ["one", "two", "three", "four"]
+id.classList.remove("one", "two"); // ["three", "four"]
+
+// Skru av og på en klasse. F.eks når vi skal skjule / vise noe.
+id.classList.toggle("visible"); // ["three", "four", "visible"]
+
+
+
+
+
+
+// ny siste!!!!!!!!!
+
+// Bruk av javascript:
+// HTML:
+// Det første vi må gjøre er å sette opp HTMLen slik at vi kan begynne å bruke JavaScript. I HTMLen under har vi laget en '<ul></ul>' med 'id="wrapper"'. 
+// Det gjør det enkelt å få tilgang til dette elementet via JavaScript.
+
+// Har i tillegg knyttet JavaScript-filen til HTMLen via '<script src="src/index.js"></script>'
+
+<!DOCTYPE html>
+html
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <ul id="wrapper"></ul>
+
+    <script src="src/index.js"></script>
+  </body>
+html
+
+<!-- JavaScript:
+Hente ut elementer og lage variabler: -->
+
+<!-- Henter ut HTMLen vi trenger tilgang til. Det kan vi gjøre med f.eks '.getElementById()', '.querySelector()' eller '.querySelectorAll()'. -->
+
+<!-- // Henter ut wrapper og knytter den til en variabel -->
+const wrapper = document.getElementById("wrapper");
+
+
+<!-- Det neste er å lage setningen som brukes til å lage boksene vist i demoen. -->
+
+const sentence = "Lærer å bruke JavaScript på HIOF";
+
+<!-- // Splitter opp setningen basert på mellomrom med .split(" ") -->
+const words = sentence.split(" ");
+
+<!-- Hardkoder deretter stiler. Dette er ikke beste praksis, men for demoen sin skyld viser jeg hvordan vi kan bruke disse til å gi HTML form og farge. -->
+
+const style =
+  "display: flex; justify-content: center; align-items: center; max-width: 500px; width: 100%; margin: 10px auto; list-style: none; border: 1px solid #ccc; height: 50px; box-sizing: border-box;";
+
+const defaultButtonStyle =
+  "max-width: 500px; width: 100%; margin: 0 auto; display: block; padding: 1rem; border: none; outline: none; box-sizing: border-box; color: black;";
+
+<!-- Lage HTML med JavaScript: -->
+<!-- Neste steg blir å lage HTMLen vi trenger. Starter med listeelementene. Til det brukes .createElement, appenChild, innerHTML, cssText og forEach. -->
+
+const sentence = "Lærer å bruke JavaScript på HIOF";
+const words = sentence.split(" ");
+const style =
+  "display: flex; justify-content: center; align-items: center; max-width: 500px; width: 100%; margin: 10px auto; list-style: none; border: 1px solid #ccc; height: 50px; box-sizing: border-box;";
+
+const createListElements = () => {
+  words.forEach((word) => {
+    <!-- // Lager HTML-elementet -->
+    const li = document.createElement('li');
+    <!-- // Knytter tekst til elementet -->
+    li.innerHTML = word;
+    <!-- // Gir elementet styling -->
+    li.style.cssText = style;
+    <!-- // Knytter elementet til wrapper, <ul> vår -->
+    wrapper.appendChild(li);
+  });
+};
+
+<!-- Vi kan gjøre tilsvarende med next knappen. -->
+
+const createNextButton = () => {
+  const btn = document.createElement("button");
+  
+  <!-- // Kunne også brukt innerHTML -->
+  btn.textContent = "Next";
+  
+  <!-- // Setter en statisk stil med JavaScript
+  // Bruker .cssText som gjør det mulig å bruke stilen vi laget i starten -->
+  btn.style.cssText = defaultButtonStyle;
+  
+  <!-- // Legger knappen etter wrapperelementet
+  // Gir oss denne HTMLen <ul id="wrapper">...</ul><button></button> -->
+  wrapper.insertAdjacentElement("afterend", btn);
+};
+
+<!-- Lytte til klikk på knapp og trigge nødvendig logikk:
+Nå HTMLen er på plass kan vi lytte til klikk på next knappen. Bruker da .addEventListener og click-event. Lager en funksjon til å løse dette. -->
+
+const addBtnListener = () => {
+  
+  <!-- // Henter knappen -->
+  const btn = document.querySelector("button");
+
+  <!-- // Lytter til "klikk" på knappen 
+  // Ved klikk trigges handleClick funksjonen -->
+  btn.addEventListener("click", handleClick);
+};
+
+  // Under ser du HTMLen vi laget med JavaScript
+  <ul id="wrapper">
+  <li>Lære</li>
+  <li>å</li>
+  <li>bruke</li>
+  ...
+  </ul>
+  <button>Next</button>
+
+
+<!-- handleClick:
+handleClick brukes til å oppdatere grensesnittet når vi trykker på next. Klikke på knappen skal sørge for at:
+
+    - teksten på next endrer seg til Steg X eller Done
+    - bakgrunnsfargen på li endrer seg
+
+For å løse dette må vi vite hvor mange ganger vi har trykket på next. Lager en variabel for å holde på denne informasjonen. -->
+
+let current = 0;
+
+const handleClick = (e) => {
+
+  <!-- // Bruker .children til å hente barna til ul med id=wrapper
+  // Får tilgang til li nummer 1 første gang, li nummer 2 andre gang o.s.v -->
+  const currentChild = wrapper.children[current];
+
+  <!-- // Funksjon brukt til å oppdatere current og tekst på knappen -->
+  updateProgressBar();
+
+  <!-- // Endrer bakgrunnsfargen på li, bruker hsl til å endre kontrast -->
+  currentChild.style.backgroundColor = `hsl(105, 51%, ${80 / current + 20}%)`;
+};
+
+<!-- Oppdatere progressen:
+For at koden over skal virke må vi lage updateProgressBar. -->
+
+<!-- // oppdaterer knappen med rett style og tekst -->
+const updateBtn = () => {
+  <!-- // henter "next" knappen -->
+  const btn = document.querySelector("button");
+ 
+  <!-- // sjekker om det er siste ord -->
+  if (current === words.length) {
+    btn.textContent = `Done`;
+    btn.style.backgroundColor = "green";
+    btn.disabled = true;
+  } else {
+    btn.textContent = `Step ${current}`;
+  }
+};
+
+const updateProgressBar = () => {
+  <!-- // Øker current for å oppdatere hvilken <li> vi skal style -->
+  current += 1;
+  <!-- // Trigger funksjonen over -->
+  updateBtn();
+};
+
+<!-- Hele koden:
+Under ser du hele koden. Sjekk også ut CodeSandbox. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <ul id="wrapper"></ul>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+import "./styles.css";
+
+const wrapper = document.getElementById("wrapper");
+const sentence = "Lærer å bruke JavaScript på HIOF";
+const words = sentence.split(" ");
+const style =
+  "display: flex; justify-content: center; align-items: center; max-width: 500px; width: 100%; margin: 10px auto; list-style: none; border: 1px solid #ccc; height: 50px; box-sizing: border-box;";
+const defaultButtonStyle =
+  "max-width: 500px; width: 100%; margin: 0 auto; display: block; padding: 1rem; border: none; outline: none; box-sizing: border-box; color: black;";
+
+let current = 0;
+
+const createListElements = () => {
+  words.forEach((word) => {
+    const li = document.createElement("li");
+    li.innerHTML = word;
+    li.style.cssText = style;
+    wrapper.appendChild(li);
+  });
+};
+
+const createNextButton = () => {
+  const btn = document.createElement("button");
+  btn.textContent = "Next";
+  btn.style.cssText = defaultButtonStyle;
+  wrapper.insertAdjacentElement("afterend", btn);
+};
+
+const updateBtn = () => {
+  const btn = document.querySelector("button");
+  if (current === words.length) {
+    btn.textContent = `Done`;
+    btn.style.backgroundColor = "green";
+    btn.disabled = true;
+  } else {
+    btn.textContent = `Step ${current}`;
+  }
+};
+
+const updateProgressBar = () => {
+  current += 1;
+  updateBtn();
+};
+
+const handleClick = () => {
+  const currentChild = wrapper.children[current];
+  updateProgressBar();
+  currentChild.style.backgroundColor = `hsl(105, 51%, ${80 / current + 20}%)`;
+};
+
+const addBtnListener = () => {
+  const btn = document.querySelector("button");
+  btn.addEventListener("click", handleClick);
+};
+
+<!-- // Starter applikasjonen med å lage liste, knapp og lytte til click -->
+createListElements();
+createNextButton();
+addBtnListener();
+
+
+
+</script>
+    
+</body>
+</html>

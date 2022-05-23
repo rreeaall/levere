@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Box Model</title>
+    <meta name="description" content="Hiof Webapplikasjoner" />
+    <meta name="author" content="Hiof Webapplikasjoner" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+    nav {
+    list-style-type: none; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 2rem;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  #logo {
+    text-decoration: none;
+    color: black;
+    box-shadow: 10px black;
+    font-weight: bold;
+  }
+
+  #lli {
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+  }
+
+  button {
+      border: 1px solid white;;
+  }
+
+  #button1 {
+    font-size: 25px;
+    background-color: turquoise;
+    color: white;
+    margin-right: auto;
+  }
+
+  #button2 {
+    background-color: turquoise;
+    color: white;
+  }
+
+  main {
+    width: 50%;
+    margin: auto;
+  }
+
+  #section {
+      display: grid;
+      grid-template-columns: 225px 225px 225px;
+      grid-template-rows: 225px 225px 225px;
+  }
+
+   #articles {  
+      border-top: 1px solid #f1f1f1;
+      border-left: 1px solid #f1f1f1;
+      border-right: 1px solid #f1f1f1;
+      border-bottom: 1px solid #f1f1f1;
+  } 
+
+</style>
+
+</head>
+<body>
+    
+<header>
+  <nav>
+    <a href="#" id="logo">
+        HIOF
+    </a>
+    <ul>
+        <li>
+            <a href ="#" id="lli">User</a>
+            <a href ="#" id="lli">user</a>
+        </li>
+    </ul>
+  </nav>
+
+</header>
+  <main>
+    <section>
+      <form>
+     <h3> Title </h3>
+     <input type="text" name="title"><br><br>
+     <h3> Content </h3>          
+        <textarea name="textarea" rows="8" cols="100"></textarea>
+        <button id="button1">Add</button>
+      </form>
+    </section>
+    
+    <h3> My Todos </h3>
+    <section id="section">
+    <article id="articles"> 
+      <h4> Tododile </h4>
+      <p> I'm baby sriracha hot chicken
+        mixtape pabst organic air...
+      </p>
+      <form> 
+          <button id="button2">Complete</button>
+      </form>
+    </article>
+
+    <article id="articles"> 
+      <h4> Tododile </h4>
+      <p> I'm baby sriracha hot chicken
+          mixtape pabst organic air...
+      </p>
+      <form> 
+            <button id="button2">Complete</button>
+      </form>
+    </article>
+
+    <article id="articles"> 
+      <h4> Tododile </h4>
+      <p> I'm baby sriracha hot chicken
+            mixtape pabst organic air...
+      </p>
+      <form> 
+            <button id="button2">Complete</button>
+      </form>
+    </article>
+
+    <article id="articles"> 
+      <h4> Tododile </h4>
+      <p> I'm baby sriracha hot chicken
+              mixtape pabst organic air...
+      </p>
+      <form> 
+            <button id="button2">Complete</button>
+      </form>
+    </article>
+
+    <article id="articles"> 
+      <h4> Tododile </h4>
+      <p> I'm baby sriracha hot chicken
+                mixtape pabst organic air...
+      </p>
+      <form> 
+            <button id="button2">Complete</button>
+      </form>
+    </article>
+
+    <article id="articles"> 
+      <h4> Tododile </h4>
+      <p> I'm baby sriracha hot chicken
+                  mixtape pabst organic air...
+      </p>
+      <form> 
+            <button id="button2">Complete</button>
+      </form>
+    </article>
+    </section>
+  </main>
+</body>
+</html>
